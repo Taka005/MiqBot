@@ -4,7 +4,7 @@ module.exports = async(client)=>{
   require("dotenv");
 
   const slashcommand = fs.readdirSync("./module/slashcommand")
-    .map(file=>require(`./function/${file}`));
+    .map(file=>require(`./slashcommand/${file}`));
 
   const contextmenu = fs.readdirSync("./module/contextmenu")
     .map(file=>require(`./contextmenu/${file}`));
