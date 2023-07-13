@@ -5,8 +5,8 @@ module.exports = async(interaction)=>{
     const id = interaction.customId.split("_")[1];
   
     if(
-    interaction.user.id !== id&&
-    !interaction.member.permissions.has(PermissionFlagsBits.ManageMessages)
+      interaction.user.id !== id&&
+      !interaction.member.permissions.has(PermissionFlagsBits.ManageMessages)
     ) return await interaction.reply({
       embeds:[{
         color: Colors.Red,

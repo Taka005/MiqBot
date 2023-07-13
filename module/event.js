@@ -53,7 +53,7 @@ module.exports = async(client)=>{
 
     Promise.all(slashcommand.map(fn=>fn(interaction)));
     Promise.all(contextmenu.map(fn=>fn(interaction)));
-
+    
     require("./event/delete")(interaction);
   });
 
