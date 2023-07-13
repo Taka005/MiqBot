@@ -12,7 +12,7 @@ module.exports = async(guild)=>{
           embeds:[{
             color: Colors.Green,
             thumbnail:{
-              url: "https://cdn.taka.ml/images/bot.png"
+              url: "https://cdn.taka.ml/images/miq.png"
             },
             title: "BOT導入ありがとうございます!",
             description: "いろいろな種類のMake it a Quoteを生成するBOTです\nコマンドのhelpを表示する時は`/help`を実行してね",
