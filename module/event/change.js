@@ -46,13 +46,13 @@ module.exports = async(interaction)=>{
       msg.author.avatarURL({extension:"png",size:1024})||msg.author.defaultAvatarURL
     );
 
-    await interaction.msg.edit({
+    await interaction.message.edit({
       files:[
         new AttachmentBuilder()
           .setFile(image.stream())
           .setName("Make_it_a_Quote.png")
       ],
-      components: [
+      components:[
         new ActionRowBuilder()
           .addComponents(
             new ButtonBuilder()
@@ -70,7 +70,8 @@ module.exports = async(interaction)=>{
             new ButtonBuilder()
               .setCustomId(`change_white_${interaction.user.id}`)
               .setStyle(ButtonStyle.Secondary)
-              .setLabel("色反転"))
+              .setLabel("色反転")),
+        new ActionRowBuilder()
           .addComponents(
             new ButtonBuilder()
               .setCustomId(`delete_${interaction.user.id}`)
