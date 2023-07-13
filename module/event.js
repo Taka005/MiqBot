@@ -56,6 +56,7 @@ module.exports = async(client)=>{
     Promise.all(contextmenu.map(fn=>fn(interaction)));
     
     require("./event/delete")(interaction);
+    require("./event/change")(interaction);
   });
 
   if(process.env.DEBUG){

@@ -53,6 +53,6 @@ module.exports = async(interaction)=>{
           ],
           ephemeral: true
         })
-      })
+      });
   }
 }

@@ -6,7 +6,7 @@ module.exports = async(message)=>{
     try{
       const reply = await message.fetchReference();
       if(!reply?.cleanContent) return;
-
+      
       const image = await gen(
         "normal",
         message.author.username,
@@ -16,7 +16,6 @@ module.exports = async(message)=>{
       );
 
       await message.reply({
-        content: `[生成元](https://discord.com/channels/${message.guild.id}/${message.channel.id}/${message.id})`,
         files:[
           new AttachmentBuilder()
             .setFile(image.stream())
@@ -31,6 +30,8 @@ module.exports = async(message)=>{
                 .setLabel("メッセージを削除"))
         ]
       });
-    }catch{}
+    }catch{
+      
+    }
   }
 }
