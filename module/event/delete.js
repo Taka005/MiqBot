@@ -21,9 +21,10 @@ module.exports = async(interaction)=>{
   
     await interaction.message.edit({
       content: `[**${interaction.user.tag}**により削除]`,
+      components: [],
       files: []
     })
-      .then(()=>{
+      .then(async()=>{
         await interaction.deferUpdate({});
       })
       .catch(async(error)=>{
