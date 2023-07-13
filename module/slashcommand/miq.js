@@ -9,7 +9,7 @@ module.exports = async(interaction)=>{
     await interaction.deferReply();
     try{
       const image = await gen(
-        "normal",
+        type,
         interaction.user.username,
         interaction.user.id,
         text,
