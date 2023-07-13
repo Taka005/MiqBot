@@ -15,12 +15,7 @@ module.exports = async(client)=>{
           new SlashCommandBuilder()
             .setName("help")
             .setDescription("View how to use")
-            .setDescriptionLocalization("ja","使い方を表示します")
-            .addStringOption(option =>
-              option
-                .setName("command")
-                .setDescription("Command name to view")
-                .setDescriptionLocalization("ja","表示するコマンド名")),
+            .setDescriptionLocalization("ja","使い方を表示します"),
           //miq
           new SlashCommandBuilder()
             .setName("miq")

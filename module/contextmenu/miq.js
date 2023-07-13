@@ -1,6 +1,6 @@
 module.exports = async(interaction)=>{
   const fetch = require("node-fetch");
-  const { AttachmentBuilder, Colors } = require("discord.js");
+  const { ButtonBuilder, ActionRowBuilder, ButtonStyle, AttachmentBuilder, Colors } = require("discord.js");
   if(!interaction.isContextMenuCommand()) return;
   if(interaction.commandName === "Make it a Quote"){
     const message = interaction.options.getMessage("message");
@@ -29,7 +29,15 @@ module.exports = async(interaction)=>{
         new AttachmentBuilder()
           .setFile(image.stream())
           .setName("Make_it_a_Quote.png")
-      ]
+      ],
+      components:[
+        new ActionRowBuilder()
+          .addComponents(
+            new ButtonBuilder()
+              .setCustomId(`delete_${interaction.user.id}`)
+              .setStyle(ButtonStyle.Primary)
+              .setLabel("メッセージを削除"))
+        ]
     }); 
   }
 }
