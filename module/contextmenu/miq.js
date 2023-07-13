@@ -35,7 +35,7 @@ module.exports = async(interaction)=>{
           .addComponents(
             new ButtonBuilder()
               .setCustomId(`delete_${interaction.user.id}`)
-              .setStyle(ButtonStyle.Primary)
+              .setStyle(ButtonStyle.Secondary)
               .setLabel("メッセージを削除"))
         ]
     }); 
