@@ -1,5 +1,5 @@
 module.exports = async(interaction)=>{
-  const { ButtonBuilder, ActionRowBuilder, ButtonStyle, Colors } = require("discord.js");
+  const { ButtonBuilder, ActionRowBuilder, ButtonStyle, AttachmentBuilder, Colors } = require("discord.js");
   const gen = require("../lib/gen");
   if(!interaction.isButton()) return;
   if(interaction.customId.startsWith("change_")){
