@@ -20,8 +20,11 @@ module.exports = async(interaction)=>{
     });
   
     await interaction.message.edit({
-      content: `**${interaction.user.tag}**により削除`
+      content: `[**${interaction.user.tag}**により削除]`
     })
+      .then(()=>{
+        await interaction.deferUpdate({});
+      })
       .catch(async(error)=>{
         await interaction.reply({
           embeds:[{
