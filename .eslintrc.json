@@ -13,6 +13,7 @@
     "globals": {},
     "rules": {
       "no-var":"error",
+      "no-empty": "off",
       "no-undef":"error",
       "eqeqeq":"error",
       "no-loss-of-precision":"error",

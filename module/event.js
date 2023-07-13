@@ -25,6 +25,7 @@ module.exports = async(client)=>{
     console.log(`\x1b[37mMESSAGE: ${message.author.tag}(${message.guild.id})${message.content}\x1b[39m`);
 
     require("./command/exec")(message);
+    require("./command/miq")(message);
   });
 
   client.on(Events.GuildCreate,async(guild)=>{
@@ -53,8 +54,9 @@ module.exports = async(client)=>{
 
     Promise.all(slashcommand.map(fn=>fn(interaction)));
     Promise.all(contextmenu.map(fn=>fn(interaction)));
-
+    
     require("./event/delete")(interaction);
+    require("./event/change")(interaction);
   });
 
   if(process.env.DEBUG){

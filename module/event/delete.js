@@ -5,8 +5,8 @@ module.exports = async(interaction)=>{
     const id = interaction.customId.split("_")[1];
   
     if(
-    interaction.user.id !== id&&
-    !interaction.member.permissions.has(PermissionFlagsBits.ManageMessages)
+      interaction.user.id !== id&&
+      !interaction.member.permissions.has(PermissionFlagsBits.ManageMessages)
     ) return await interaction.reply({
       embeds:[{
         color: Colors.Red,
@@ -20,8 +20,13 @@ module.exports = async(interaction)=>{
     });
   
     await interaction.message.edit({
-      content: `**${interaction.user.tag}**により削除`
+      content: `[**${interaction.user.tag}**により削除]`,
+      components: [],
+      files: []
     })
+      .then(async()=>{
+        await interaction.deferUpdate({});
+      })
       .catch(async(error)=>{
         await interaction.reply({
           embeds:[{
@@ -48,6 +53,6 @@ module.exports = async(interaction)=>{
           ],
           ephemeral: true
         })
-      })
+      });
   }
 }

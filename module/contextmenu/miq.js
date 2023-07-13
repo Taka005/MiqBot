@@ -1,6 +1,6 @@
 module.exports = async(interaction)=>{
-  const fetch = require("node-fetch");
   const { ButtonBuilder, ActionRowBuilder, ButtonStyle, AttachmentBuilder, Colors } = require("discord.js");
+  const gen = require("../lib/gen");
   if(!interaction.isContextMenuCommand()) return;
   if(interaction.commandName === "Make it a Quote"){
     const message = interaction.options.getMessage("message");
@@ -20,9 +20,14 @@ module.exports = async(interaction)=>{
     await interaction.deferReply();
     await interaction.editReply("生成中...");
 
-    const image = await fetch(`http://localhost:3000/?name=${message.author.username}&id=${message.author.id}&content=${message.cleanContent}&icon=${message.author.avatarURL({extension:"png",size:1024})||message.author.defaultAvatarURL}`)
-      .then(res=>res.blob());
-    
+    const image = await gen(
+      "normal",
+      message.author.username,
+      message.author.id,
+      message.cleanContent.replace("#","＃"),
+      message.author.avatarURL({extension:"png",size:1024})||message.author.defaultAvatarURL
+    );
+
     await interaction.editReply({ 
       content: `[生成元](https://discord.com/channels/${message.guild.id}/${message.channel.id}/${message.id})`,
       files:[
@@ -32,12 +37,30 @@ module.exports = async(interaction)=>{
       ],
       components:[
         new ActionRowBuilder()
+        .addComponents(
+          new ButtonBuilder()
+            .setCustomId(`change_normal_${interaction.user.id}`)
+            .setStyle(ButtonStyle.Secondary)
+            .setLabel("標準"),
+          new ButtonBuilder()
+            .setCustomId(`change_color_${interaction.user.id}`)
+            .setStyle(ButtonStyle.Secondary)
+            .setLabel("カラー"),
+          new ButtonBuilder()
+            .setCustomId(`change_reverse_${interaction.user.id}`)
+            .setStyle(ButtonStyle.Secondary)
+            .setLabel("位置反転"),
+          new ButtonBuilder()
+            .setCustomId(`change_white_${interaction.user.id}`)
+            .setStyle(ButtonStyle.Secondary)
+            .setLabel("色反転")),
+        new ActionRowBuilder()
           .addComponents(
             new ButtonBuilder()
               .setCustomId(`delete_${interaction.user.id}`)
               .setStyle(ButtonStyle.Secondary)
               .setLabel("メッセージを削除"))
-        ]
+      ]
     }); 
   }
 }
