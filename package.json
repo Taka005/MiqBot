@@ -1,0 +1,46 @@
+{
+  "name": "miqbot",
+  "description": "Make it a Quote生成BOT",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "lint": "./node_modules/.bin/eslint module"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Taka005/MiqBot.git"
+  },
+  "keywords": [
+    "discordjs",
+    "Make it a Quote",
+    "Taka005"
+  ],
+  "author": "Taka005",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Taka005/MiqBot/issues"
+  },
+  "homepage": "https://github.com/Taka005/MiqBot#readme",
+  "dependencies": {
+    "async": "^3.2.4",
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.3.1",
+    "jsdom": "^22.1.0",
+    "mathjs": "^11.8.2",
+    "mysql": "^2.18.1",
+    "node-cron": "^3.0.2",
+    "node-fetch": "^2.6.12"
+  },
+  "devDependencies": {
+    "eslint": "^8.44.0",
+    "eslint-plugin-node": "^11.1.0"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.7",
+    "utf-8-validate": "^6.0.3"
+  }
+}
