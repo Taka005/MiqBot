@@ -11,7 +11,7 @@ module.exports = async(message)=>{
         "normal",
         message.author.username,
         message.author.id,
-        message.cleanContent,
+        message.cleanContent.replace("#","＃"),
         message.author.avatarURL({extension:"png",size:1024})||message.author.defaultAvatarURL
       );
 

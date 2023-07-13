@@ -12,7 +12,7 @@ module.exports = async(interaction)=>{
         type,
         interaction.user.username,
         interaction.user.id,
-        text,
+        text.replace("#","＃"),
         interaction.user.avatarURL({extension:"png",size:1024})||interaction.user.defaultAvatarURL
       );
   
