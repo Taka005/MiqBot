@@ -1,5 +1,4 @@
 module.exports = async(interaction)=>{
-  const fetch = require("node-fetch");
   const { ButtonBuilder, ActionRowBuilder, ButtonStyle, AttachmentBuilder, Colors } = require("discord.js");
   const gen = require("../lib/gen");
   if(!interaction.isContextMenuCommand()) return;

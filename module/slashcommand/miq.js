@@ -1,6 +1,5 @@
 module.exports = async(interaction)=>{
   const { Colors, AttachmentBuilder } = require("discord.js");
-  const fetch = require("node-fetch");
   const gen = require("../lib/gen");
   if(!interaction.isChatInputCommand()) return;
   if(interaction.commandName === "miq"){

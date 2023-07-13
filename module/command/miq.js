@@ -1,5 +1,4 @@
 module.exports = async(message)=>{
-  const fetch = require("node-fetch");
   const { ButtonBuilder, ActionRowBuilder, ButtonStyle, AttachmentBuilder } = require("discord.js");
   const gen = require("../lib/gen");
   if(message.content === "<@933484535461593198>"){
