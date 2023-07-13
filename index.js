@@ -42,7 +42,7 @@ process.on("uncaughtException",async(error)=>{
 
 process.on("unhandledRejection",async(error)=>{
   console.log(`\x1b[31mERROR: ${error.stack}\x1b[39m`);
-
+return
   await client.channels.cache.get(config.error).send({
     embeds:[{
       color: Colors.Orange,
