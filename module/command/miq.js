@@ -11,7 +11,7 @@ module.exports = async(message)=>{
     const type = message.content.substring(21).trim();
     if(
       type.length > 0&&
-      types.includes(type)
+      !types.includes(type)
     ) return await message.reply({
       embeds:[{
         author:{
