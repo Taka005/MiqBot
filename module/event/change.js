@@ -44,41 +44,6 @@ module.exports = async(interaction)=>{
         new AttachmentBuilder()
           .setFile(image.stream())
           .setName(`MIQ_${msg.id}.png`)
-      ],
-      components:[
-        new ActionRowBuilder()
-          .addComponents(
-            new ButtonBuilder()
-              .setCustomId(`change_color_${interaction.user.id}`)
-              .setStyle(ButtonStyle.Secondary)
-              .setEmoji("1129319479969599598"),
-            new ButtonBuilder()
-              .setCustomId(`change_reverse_${interaction.user.id}`)
-              .setStyle(ButtonStyle.Secondary)
-              .setEmoji("1129319434452996167"),
-            new ButtonBuilder()
-              .setCustomId(`change_white_${interaction.user.id}`)
-              .setStyle(ButtonStyle.Secondary)
-              .setEmoji("1129319552648495154"),
-            new ButtonBuilder()
-              .setCustomId(`change_reverseColor_${interaction.user.id}`)
-              .setStyle(ButtonStyle.Secondary)
-              .setEmoji("1129354351312379926"),
-            new ButtonBuilder()
-              .setCustomId(`change_reverseWhite_${interaction.user.id}`)
-              .setStyle(ButtonStyle.Secondary)
-              .setEmoji("1129355922855182356")),
-        new ActionRowBuilder()
-          .addComponents(
-            new ButtonBuilder()
-              .setCustomId(`change_normal_${interaction.user.id}`)
-              .setStyle(ButtonStyle.Secondary)
-              .setLabel("リセット"),
-            new ButtonBuilder()
-              .setCustomId(`delete_${interaction.user.id}`)
-              .setStyle(ButtonStyle.Danger)
-              .setLabel("メッセージを削除")
-              .setEmoji("1129319348264255518"))
       ]
     })
       .then(async()=>{
