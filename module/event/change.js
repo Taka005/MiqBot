@@ -75,7 +75,7 @@ module.exports = async(interaction)=>{
         .then(async()=>{
           await interaction.deferUpdate({});
         })
-        .catch(async(error)=>{
+        .catch(async()=>{
           await interaction.reply({
             embeds:[{
               color: Colors.Red,
