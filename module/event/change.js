@@ -30,7 +30,9 @@ module.exports = async(interaction)=>{
       }],
       ephemeral: true
     });
-    await interaction.deferUpdate({});
+
+    interaction.deferUpdate({});
+
     const image = await gen(
       data[1],
       msg.author.username,
@@ -45,22 +47,6 @@ module.exports = async(interaction)=>{
           .setFile(image.stream())
           .setName(`MIQ_${msg.id}.png`)
       ]
-    })
-      .then(async()=>{
-       
-      })
-      .catch(async()=>{
-        await interaction.reply({
-          embeds:[{
-            color: Colors.Red,
-            author:{
-              name: "編集に失敗しました",
-              icon_url: "https://cdn.taka.ml/images/system/error.png"
-            },
-            description: "BOTの権限が不足している可能性があります"
-          }],
-          ephemeral: true
-        });
-      });
+    }).catch(()=>{});
     }
   }
