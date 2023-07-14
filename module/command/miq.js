@@ -55,7 +55,15 @@ module.exports = async(message)=>{
             new ButtonBuilder()
               .setCustomId(`change_white_${message.author.id}`)
               .setStyle(ButtonStyle.Secondary)
-              .setEmoji("1129319434452996167")),
+              .setEmoji("1129319434452996167"),
+            new ButtonBuilder()
+              .setCustomId(`change_reverseColor_${message.author.id}`)
+              .setStyle(ButtonStyle.Secondary)
+              .setEmoji("1129354351312379926"),
+            new ButtonBuilder()
+              .setCustomId(`change_reverseWhite_${message.author.id}`)
+              .setStyle(ButtonStyle.Secondary)
+              .setEmoji("1129355922855182356")),
         new ActionRowBuilder()
           .addComponents(
             new ButtonBuilder()

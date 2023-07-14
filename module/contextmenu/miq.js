@@ -49,7 +49,15 @@ module.exports = async(interaction)=>{
             new ButtonBuilder()
               .setCustomId(`change_white_${interaction.user.id}`)
               .setStyle(ButtonStyle.Secondary)
-              .setEmoji("1129319434452996167")),
+              .setEmoji("1129319434452996167"),
+            new ButtonBuilder()
+              .setCustomId(`change_reverseColor_${interaction.user.id}`)
+              .setStyle(ButtonStyle.Secondary)
+              .setEmoji("1129354351312379926"),
+            new ButtonBuilder()
+              .setCustomId(`change_reverseWhite_${interaction.user.id}`)
+              .setStyle(ButtonStyle.Secondary)
+              .setEmoji("1129355922855182356")),
         new ActionRowBuilder()
           .addComponents(
             new ButtonBuilder()
