@@ -71,8 +71,12 @@ module.exports = async(interaction)=>{
         new ActionRowBuilder()
           .addComponents(
             new ButtonBuilder()
-              .setCustomId(`delete_${interaction.user.id}`)
+              .setCustomId(`change_normal_${interaction.user.id}`)
               .setStyle(ButtonStyle.Secondary)
+              .setLabel("元に戻す"),
+            new ButtonBuilder()
+              .setCustomId(`delete_${interaction.user.id}`)
+              .setStyle(ButtonStyle.Danger)
               .setLabel("メッセージを削除")
               .setEmoji("1129319348264255518"))
       ]

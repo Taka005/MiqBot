@@ -67,6 +67,10 @@ module.exports = async(message)=>{
         new ActionRowBuilder()
           .addComponents(
             new ButtonBuilder()
+              .setCustomId(`change_normal_${interaction.user.id}`)
+              .setStyle(ButtonStyle.Secondary)
+              .setLabel("元に戻す"),
+            new ButtonBuilder()
               .setCustomId(`delete_${message.author.id}`)
               .setStyle(ButtonStyle.Secondary)
               .setLabel("メッセージを削除")
