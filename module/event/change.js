@@ -1,5 +1,5 @@
 module.exports = async(interaction)=>{
-  const { ButtonBuilder, ActionRowBuilder, ButtonStyle, AttachmentBuilder, Colors } = require("discord.js");
+  const { AttachmentBuilder, Colors } = require("discord.js");
   const gen = require("../lib/gen");
   const fetchMessage = require("../lib/fetchMessage");
   if(!interaction.isButton()) return;
