@@ -39,7 +39,7 @@ module.exports = async(message)=>{
       files:[
         new AttachmentBuilder()
           .setFile(image.stream())
-          .setName("Make_it_a_Quote.png")
+          .setName(`MIQ_${reply.id}.png`)
       ],
       components:[
         new ActionRowBuilder()

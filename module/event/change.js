@@ -18,7 +18,7 @@ module.exports = async(interaction)=>{
       ephemeral: true
     });
     
-    const msg = await fetchMessage(interaction.channel,interaction.message.content.match(/\d{17,19}/g)[2]);
+    const msg = await fetchMessage(interaction.channel,interaction.message.files[0].name(/\d{17,19}/g)[0]);
     if(!msg) return await interaction.reply({
       embeds:[{
         color: Colors.Red,
@@ -43,7 +43,7 @@ module.exports = async(interaction)=>{
       files:[
         new AttachmentBuilder()
           .setFile(image.stream())
-          .setName("Make_it_a_Quote.png")
+          .setName(`MIQ_${msg.id}.png`)
       ],
       components:[
         new ActionRowBuilder()
@@ -69,21 +69,21 @@ module.exports = async(interaction)=>{
               .setEmoji("1129319348264255518"))
       ]
     })
-        .then(async()=>{
-          await interaction.deferUpdate({});
-        })
-        .catch(async()=>{
-          await interaction.reply({
-            embeds:[{
-              color: Colors.Red,
-              author:{
-                name: "編集に失敗しました",
-                icon_url: "https://cdn.taka.ml/images/system/error.png"
-              },
-              description: "BOTの権限が不足している可能性があります"
-            }],
-            ephemeral: true
-          });
+      .then(async()=>{
+        await interaction.deferUpdate({});
+      })
+      .catch(async()=>{
+        await interaction.reply({
+          embeds:[{
+            color: Colors.Red,
+            author:{
+              name: "編集に失敗しました",
+              icon_url: "https://cdn.taka.ml/images/system/error.png"
+            },
+            description: "BOTの権限が不足している可能性があります"
+          }],
+          ephemeral: true
         });
+      });
     }
   }
