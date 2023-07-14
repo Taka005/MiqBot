@@ -1,5 +1,5 @@
 module.exports = async(interaction)=>{
-  const { ButtonBuilder, ActionRowBuilder, ButtonStyle, Colors, PermissionFlagsBits } = require("discord.js");
+  const { Colors, PermissionFlagsBits } = require("discord.js");
   if(!interaction.isButton()) return;
   if(interaction.customId.startsWith("delete_")){
     const id = interaction.customId.split("_")[1];
@@ -27,7 +27,7 @@ module.exports = async(interaction)=>{
       .then(async()=>{
         await interaction.deferUpdate({});
       })
-      .catch(async(error)=>{
+      .catch(async()=>{
         await interaction.reply({
           embeds:[{
             color: Colors.Red,
@@ -36,21 +36,7 @@ module.exports = async(interaction)=>{
               icon_url: "https://cdn.taka.ml/images/system/error.png"
             },
             description: "BOTの権限が不足している可能性があります",
-            fields:[
-              {
-                name: "エラーコード",
-                value: `\`\`\`${error}\`\`\``
-              }
-            ]
           }],
-          components:[
-            new ActionRowBuilder()
-              .addComponents( 
-                new ButtonBuilder()
-                  .setLabel("サポートサーバー")
-                  .setURL("https://discord.gg/NEesRdGQwD")
-                  .setStyle(ButtonStyle.Link))
-          ],
           ephemeral: true
         })
       });

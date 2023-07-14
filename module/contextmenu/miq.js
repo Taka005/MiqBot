@@ -37,23 +37,23 @@ module.exports = async(interaction)=>{
       ],
       components:[
         new ActionRowBuilder()
-        .addComponents(
-          new ButtonBuilder()
-            .setCustomId(`change_normal_${interaction.user.id}`)
-            .setStyle(ButtonStyle.Secondary)
-            .setLabel("標準"),
-          new ButtonBuilder()
-            .setCustomId(`change_color_${interaction.user.id}`)
-            .setStyle(ButtonStyle.Secondary)
-            .setLabel("カラー"),
-          new ButtonBuilder()
-            .setCustomId(`change_reverse_${interaction.user.id}`)
-            .setStyle(ButtonStyle.Secondary)
-            .setLabel("位置反転"),
-          new ButtonBuilder()
-            .setCustomId(`change_white_${interaction.user.id}`)
-            .setStyle(ButtonStyle.Secondary)
-            .setLabel("色反転")),
+          .addComponents(
+            new ButtonBuilder()
+              .setCustomId(`change_normal_${interaction.user.id}`)
+              .setStyle(ButtonStyle.Secondary)
+              .setLabel("標準"),
+            new ButtonBuilder()
+              .setCustomId(`change_color_${interaction.user.id}`)
+              .setStyle(ButtonStyle.Secondary)
+              .setLabel("カラー"),
+            new ButtonBuilder()
+              .setCustomId(`change_reverse_${interaction.user.id}`)
+              .setStyle(ButtonStyle.Secondary)
+              .setLabel("位置反転"),
+            new ButtonBuilder()
+              .setCustomId(`change_white_${interaction.user.id}`)
+              .setStyle(ButtonStyle.Secondary)
+              .setLabel("色反転")),
         new ActionRowBuilder()
           .addComponents(
             new ButtonBuilder()
