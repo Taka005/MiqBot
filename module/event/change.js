@@ -18,7 +18,7 @@ module.exports = async(interaction)=>{
       ephemeral: true
     });
     console.log(interaction.message.attachments)
-    const msg = await fetchMessage(interaction.channel,interaction.message.attachments[0].name(/\d{17,19}/g)[0]);
+    const msg = await fetchMessage(interaction.channel,interaction.message.attachments.toJSON()[0].name(/\d{17,19}/g)[0]);
     if(!msg) return await interaction.reply({
       embeds:[{
         color: Colors.Red,
