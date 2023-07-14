@@ -17,7 +17,7 @@ module.exports = async(interaction)=>{
       }],
       ephemeral: true
     });
-    console.log(interaction.message.attachments)
+    console.log(interaction.message.attachments.first().name)
     const msg = await fetchMessage(interaction.channel,interaction.message.attachments.map(r=>r)[0].name(/\d{17,19}/g)[0]);
     if(!msg) return await interaction.reply({
       embeds:[{
