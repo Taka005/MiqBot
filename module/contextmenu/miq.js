@@ -39,10 +39,6 @@ module.exports = async(interaction)=>{
         new ActionRowBuilder()
           .addComponents(
             new ButtonBuilder()
-              .setCustomId(`change_normal_${interaction.user.id}`)
-              .setStyle(ButtonStyle.Secondary)
-              .setLabel("標準"),
-            new ButtonBuilder()
               .setCustomId(`change_color_${interaction.user.id}`)
               .setStyle(ButtonStyle.Secondary)
               .setLabel("カラー"),
@@ -59,7 +55,8 @@ module.exports = async(interaction)=>{
             new ButtonBuilder()
               .setCustomId(`delete_${interaction.user.id}`)
               .setStyle(ButtonStyle.Secondary)
-              .setLabel("メッセージを削除"))
+              .setLabel("メッセージを削除")
+              .setEmoji("1129319348264255518"))
       ]
     }); 
   }
