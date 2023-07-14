@@ -28,10 +28,10 @@ module.exports = async(message)=>{
 
     const image = await gen(
       type,
-      message.author.username,
-      message.author.id,
-      message.cleanContent.replace("#","＃"),
-      message.author.avatarURL({extension:"png",size:1024})||message.author.defaultAvatarURL
+      reply.author.username,
+      reply.author.id,
+      reply.cleanContent.replace("#","＃"),
+      reply.author.avatarURL({extension:"png",size:1024})||reply.author.defaultAvatarURL
     );
 
     await msg.edit({
