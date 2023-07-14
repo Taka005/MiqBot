@@ -45,21 +45,21 @@ module.exports = async(message)=>{
         new ActionRowBuilder()
           .addComponents(
             new ButtonBuilder()
-              .setCustomId(`change_color_${interaction.user.id}`)
+              .setCustomId(`change_color_${message.author.id}`)
               .setStyle(ButtonStyle.Secondary)
               .setEmoji("1129319552648495154"),
             new ButtonBuilder()
-              .setCustomId(`change_reverse_${interaction.user.id}`)
+              .setCustomId(`change_reverse_${message.author.id}`)
               .setStyle(ButtonStyle.Secondary)
               .setEmoji("1129319479969599598"),
             new ButtonBuilder()
-              .setCustomId(`change_white_${interaction.user.id}`)
+              .setCustomId(`change_white_${message.author.id}`)
               .setStyle(ButtonStyle.Secondary)
               .setEmoji("1129319434452996167")),
         new ActionRowBuilder()
           .addComponents(
             new ButtonBuilder()
-              .setCustomId(`delete_${interaction.user.id}`)
+              .setCustomId(`delete_${message.author.id}`)
               .setStyle(ButtonStyle.Secondary)
               .setLabel("メッセージを削除")
               .setEmoji("1129319348264255518"))
