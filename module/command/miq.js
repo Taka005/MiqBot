@@ -8,7 +8,7 @@ module.exports = async(message)=>{
     const reply = await fetchReference(message);
     if(!reply?.cleanContent) return;
 
-    const type = message.cleanContent.substring(21).trim();
+    const type = message.content.substring(21).trim();
     if(
       type.length > 0&&
       types.includes(type)
