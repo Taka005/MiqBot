@@ -30,7 +30,7 @@ module.exports = async(interaction)=>{
       }],
       ephemeral: true
     });
-
+    await interaction.deferUpdate({});
     const image = await gen(
       data[1],
       msg.author.username,
@@ -47,7 +47,7 @@ module.exports = async(interaction)=>{
       ]
     })
       .then(async()=>{
-        await interaction.deferUpdate({});
+       
       })
       .catch(async()=>{
         await interaction.reply({
