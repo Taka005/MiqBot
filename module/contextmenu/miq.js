@@ -33,33 +33,42 @@ module.exports = async(interaction)=>{
       files:[
         new AttachmentBuilder()
           .setFile(image.stream())
-          .setName("Make_it_a_Quote.png")
+          .setName(`MIQ_${message.id}.png`)
       ],
       components:[
         new ActionRowBuilder()
           .addComponents(
             new ButtonBuilder()
-              .setCustomId(`change_normal_${interaction.user.id}`)
-              .setStyle(ButtonStyle.Secondary)
-              .setLabel("標準"),
-            new ButtonBuilder()
               .setCustomId(`change_color_${interaction.user.id}`)
               .setStyle(ButtonStyle.Secondary)
-              .setLabel("カラー"),
+              .setEmoji("1129319552648495154"),
             new ButtonBuilder()
               .setCustomId(`change_reverse_${interaction.user.id}`)
               .setStyle(ButtonStyle.Secondary)
-              .setLabel("位置反転"),
+              .setEmoji("1129319479969599598"),
             new ButtonBuilder()
               .setCustomId(`change_white_${interaction.user.id}`)
               .setStyle(ButtonStyle.Secondary)
-              .setLabel("色反転")),
+              .setEmoji("1129319434452996167"),
+            new ButtonBuilder()
+              .setCustomId(`change_reverseColor_${interaction.user.id}`)
+              .setStyle(ButtonStyle.Secondary)
+              .setEmoji("1129354351312379926"),
+            new ButtonBuilder()
+              .setCustomId(`change_reverseWhite_${interaction.user.id}`)
+              .setStyle(ButtonStyle.Secondary)
+              .setEmoji("1129355922855182356")),
         new ActionRowBuilder()
           .addComponents(
             new ButtonBuilder()
-              .setCustomId(`delete_${interaction.user.id}`)
+              .setCustomId(`change_normal_${interaction.user.id}`)
               .setStyle(ButtonStyle.Secondary)
-              .setLabel("メッセージを削除"))
+              .setLabel("リセット"),
+            new ButtonBuilder()
+              .setCustomId(`delete_${interaction.user.id}`)
+              .setStyle(ButtonStyle.Danger)
+              .setLabel("メッセージを削除")
+              .setEmoji("1129319348264255518"))
       ]
     }); 
   }

@@ -39,15 +39,42 @@ module.exports = async(message)=>{
       files:[
         new AttachmentBuilder()
           .setFile(image.stream())
-          .setName("Make_it_a_Quote.png")
+          .setName(`MIQ_${reply.id}.png`)
       ],
       components:[
         new ActionRowBuilder()
           .addComponents(
             new ButtonBuilder()
-              .setCustomId(`delete_${message.author.id}`)
+              .setCustomId(`change_color_${message.author.id}`)
               .setStyle(ButtonStyle.Secondary)
-              .setLabel("メッセージを削除"))
+              .setEmoji("1129319552648495154"),
+            new ButtonBuilder()
+              .setCustomId(`change_reverse_${message.author.id}`)
+              .setStyle(ButtonStyle.Secondary)
+              .setEmoji("1129319479969599598"),
+            new ButtonBuilder()
+              .setCustomId(`change_white_${message.author.id}`)
+              .setStyle(ButtonStyle.Secondary)
+              .setEmoji("1129319434452996167"),
+            new ButtonBuilder()
+              .setCustomId(`change_reverseColor_${message.author.id}`)
+              .setStyle(ButtonStyle.Secondary)
+              .setEmoji("1129354351312379926"),
+            new ButtonBuilder()
+              .setCustomId(`change_reverseWhite_${message.author.id}`)
+              .setStyle(ButtonStyle.Secondary)
+              .setEmoji("1129355922855182356")),
+        new ActionRowBuilder()
+          .addComponents(
+            new ButtonBuilder()
+              .setCustomId(`change_normal_${message.author.id}`)
+              .setStyle(ButtonStyle.Secondary)
+              .setLabel("リセット"),
+            new ButtonBuilder()
+              .setCustomId(`delete_${message.author.id}`)
+              .setStyle(ButtonStyle.Danger)
+              .setLabel("メッセージを削除")
+              .setEmoji("1129319348264255518"))
       ]
     }).catch(()=>{});
   }
