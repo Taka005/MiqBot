@@ -73,7 +73,7 @@ module.exports = async(interaction)=>{
             new ButtonBuilder()
               .setCustomId(`change_normal_${interaction.user.id}`)
               .setStyle(ButtonStyle.Secondary)
-              .setLabel("元に戻す"),
+              .setLabel("リセット"),
             new ButtonBuilder()
               .setCustomId(`delete_${interaction.user.id}`)
               .setStyle(ButtonStyle.Danger)
