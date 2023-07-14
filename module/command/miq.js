@@ -67,7 +67,7 @@ module.exports = async(message)=>{
         new ActionRowBuilder()
           .addComponents(
             new ButtonBuilder()
-              .setCustomId(`change_normal_${interaction.user.id}`)
+              .setCustomId(`change_normal_${message.author.id}`)
               .setStyle(ButtonStyle.Secondary)
               .setLabel("元に戻す"),
             new ButtonBuilder()
