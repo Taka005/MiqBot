@@ -41,15 +41,15 @@ module.exports = async(interaction)=>{
             new ButtonBuilder()
               .setCustomId(`change_color_${interaction.user.id}`)
               .setStyle(ButtonStyle.Secondary)
-              .setLabel("カラー"),
+              .setEmoji("1129319552648495154"),
             new ButtonBuilder()
               .setCustomId(`change_reverse_${interaction.user.id}`)
               .setStyle(ButtonStyle.Secondary)
-              .setLabel("位置反転"),
+              .setEmoji("1129319479969599598"),
             new ButtonBuilder()
               .setCustomId(`change_white_${interaction.user.id}`)
               .setStyle(ButtonStyle.Secondary)
-              .setLabel("色反転")),
+              .setEmoji("1129319434452996167")),
         new ActionRowBuilder()
           .addComponents(
             new ButtonBuilder()
