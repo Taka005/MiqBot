@@ -41,23 +41,23 @@ module.exports = async(interaction)=>{
             new ButtonBuilder()
               .setCustomId(`change_color_${interaction.user.id}`)
               .setStyle(ButtonStyle.Secondary)
-              .setEmoji("1129319479969599598"),
+              .setEmoji("1131187775937458216"),
             new ButtonBuilder()
               .setCustomId(`change_reverse_${interaction.user.id}`)
               .setStyle(ButtonStyle.Secondary)
-              .setEmoji("1129319434452996167"),
+              .setEmoji("1131189335379689482"),
             new ButtonBuilder()
               .setCustomId(`change_white_${interaction.user.id}`)
               .setStyle(ButtonStyle.Secondary)
-              .setEmoji("1129319552648495154"),
+              .setEmoji("1131189576841560115"),
             new ButtonBuilder()
               .setCustomId(`change_reverseColor_${interaction.user.id}`)
               .setStyle(ButtonStyle.Secondary)
-              .setEmoji("1129354351312379926"),
+              .setEmoji("1131191439666196531"),
             new ButtonBuilder()
               .setCustomId(`change_reverseWhite_${interaction.user.id}`)
               .setStyle(ButtonStyle.Secondary)
-              .setEmoji("1129355922855182356")),
+              .setEmoji("1131190834843353158")),
         new ActionRowBuilder()
           .addComponents(
             new ButtonBuilder()
@@ -68,7 +68,7 @@ module.exports = async(interaction)=>{
               .setCustomId(`delete_${interaction.user.id}`)
               .setStyle(ButtonStyle.Danger)
               .setLabel("メッセージを削除")
-              .setEmoji("1129319348264255518"))
+              .setEmoji("1131188900392603688"))
       ]
     }); 
   }

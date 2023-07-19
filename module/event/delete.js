@@ -20,7 +20,7 @@ module.exports = async(interaction)=>{
     });
   
     await interaction.message.edit({
-      content: `[ <:delete:1129319348264255518> **${interaction.user.tag}**により削除 ]`,
+      content: `[ <:delete:1131188900392603688> **${interaction.user.tag}**により削除 ]`,
       components: [],
       files: []
     })
