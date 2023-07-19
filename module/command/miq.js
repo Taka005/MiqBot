@@ -73,8 +73,7 @@ module.exports = async(message)=>{
             new ButtonBuilder()
               .setCustomId(`delete_${message.author.id}`)
               .setStyle(ButtonStyle.Danger)
-              .setLabel("メッセージを削除")
-              .setEmoji("1131188900392603688"))
+              .setLabel("メッセージを削除"))
       ]
     }).catch(()=>{});
   }
