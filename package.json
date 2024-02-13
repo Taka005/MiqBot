@@ -27,7 +27,7 @@
   "homepage": "https://github.com/Taka005/MiqBot#readme",
   "dependencies": {
     "discord.js": "^14.13.0",
-    "dotenv": "^16.4.2",
+    "dotenv": "^16.4.3",
     "node-fetch": "^2.7.0"
   },
   "devDependencies": {
